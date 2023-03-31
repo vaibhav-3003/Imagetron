@@ -120,12 +120,12 @@ const CreatePin = ({user}) => {
           </div>
 
         </div>
-        <div className='flex flex-col gap-6 py-3 mt-8 w-11/12'>
+        <div className='flex flex-col gap-6 py-3 mt-8 w-full'>
               <input type="text" 
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Add your title here"
-              className='outline-none text-xl sm:text-2xl font-bold border-b-2 border-gray-200'
+              className='outline-none text-xl sm:text-2xl font-bold px-4 py-2 border focus:shadow-lg rounded-xl shadow-md border-gray-200'
               />
 
               {user && (
@@ -141,20 +141,20 @@ const CreatePin = ({user}) => {
               value={about}
               onChange={(e) => setAbout(e.target.value)}
               placeholder="What is your pin about"
-              className='outline-none text-base mt-5 sm:text-lg  border-b-2 border-gray-200'
+              className='outline-none text-base sm:text-lg font-bold px-4 py-2 border focus:shadow-lg rounded-xl shadow-md border-gray-200'
               />
               <input type="text" 
               value={destination}
               onChange={(e) => setDestination(e.target.value)}
               placeholder="Add a destination link"
-              className='outline-none text-base mt-2 sm:text-lg  border-b-2 border-gray-200'
+              className='outline-none text-base sm:text-lg font-bold px-4 py-2 border focus:shadow-lg rounded-xl shadow-md border-gray-200'
               />
               <div className='flex flex-col'>
                 <div>
                   <p className='mb-2 font-semibold text-lg sm:text-xl'>Choose Pin category</p>
                   <select
                   onChange={(e) => setCategory(e.target.value)}
-                  className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
+                  className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer shadow-md border"
                   >
                     <option value="other" className='bg-white'>Select Category</option>
                     {categories.map((category) =>(
@@ -164,7 +164,10 @@ const CreatePin = ({user}) => {
                 </div>
                 <div className='flex justify-end items-end mt-5'>
                       <button type='button'
-                      className='bg-red-500 text-white font-bold p-2 rounded-full w-28 outline-none mt-5'
+                      data-te-ripple-init
+                      data-te-ripple-color="light"
+                      className='bg-red-500 text-white font-bold p-2 rounded-full w-28 border outline-none mt-5 shadow-md'
+                      
                       onClick={savePin}
                       >
                         Save Pin
