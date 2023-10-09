@@ -111,7 +111,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 </a>
               )}
 
-              {postedBy?._id === user.sub && (
+              {postedBy?._id === user?.sub && (
                 <button
                   type="button"
                   onClick={(e) => {
